@@ -10,10 +10,10 @@ const y = new Date()
 newYear.innerHTML = y.getFullYear()
 
 // SET DATE NEW YEAR
-//let new_year = "Jan 1, 2025 00:00:00",
+let new_year = "Jan 1, 2025 00:00:00",
 
 // SET DATE TESTING ONLY
-let new_year = "Jun 29, 2025 13:25:00"
+//let new_year = "Jun 29, 2025 13:25:00"
 
 
     countDown = new Date(new_year).getTime(),
