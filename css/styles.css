@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    align-items: center;
+    background-color: #000;
+    display: flex;
+
+}
+
+.container{
+    color: #F5F7F8;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/*TEXT "HAPPY NEW YEAR"*/
+.newYearText{
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    font-size: 5rem;
+    z-index: 100;
+    padding-top: 2em;
+}
+
+/*TEXT "Cheer to new beginnings,"*/
+.capNewYearText{
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    z-index: 100;
+    line-height: 4rem;
+}
+
+/*TEXT YEARS*/
+.yearText{
+    font-size: 15rem;
+    z-index: 100;
+}
+
+/*TIMER COUNTER*/
+.timerCount {
+    width: 200px;
+    text-align: center;
+    display: block;
+    font-size: 8rem;
+    z-index: 100;
+    text-align : center;
+    padding-top: 0.5em;
+}
+
+/*TEXT TIMER*/
+.timerText{
+    display: inline-block;
+    font-size: 1.5rem;
+    list-style-type:none ;
+    padding: 1em;
+    text-transform: uppercase;
+    z-index: 100;
+    text-align :center;
+}
+
+/*SECOND ONLY*/
+.timerCount_second span{
+    font-size: 30rem;
+    z-index: 100;
+    text-align: center;
+}
+.timerCount_second{
+    width: 750px;
+    text-align: center;
+}
+
+/*FOOTER*/
+footer{
+    width: 100%;
+    color: #F5F7F8; 
+    display: grid;
+    place-items: center;
+    padding-bottom: 8em; 
+    padding-top: 2em;
+    font-size: 1.2rem;
+}
+.sticky-footer{
+    position: sticky;
+    top: 100%;
+}
+
+/*FIREWORKS*/
+.fireworks-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: bottom left;
+    background-size: cover;
+    background-repeat: no-repeat;
+	z-index: -1;
+}
