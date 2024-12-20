@@ -10,10 +10,11 @@ const y = new Date()
 newYear.innerHTML = y.getFullYear()
 
 // SET DATE NEW YEAR
+// WAJIB GANTI SETIAP TAHUN
 let new_year = "Jan 1, 2025 00:00:00",
 
 // SET DATE TESTING ONLY
-//let new_year = "Jun 29, 2025 13:25:00"
+// let new_year = "Dec 18, 2024 09:44:00"
 
 
     countDown = new Date(new_year).getTime(),
@@ -61,11 +62,12 @@ function new_pad(x) {
 return (x < 10 ? '' : '') + x;
 }
 
+// FIREWORK
 const fireworks = new Fireworks(fireworkContainer, {
-    speed: 20,
+    speed: 15,
     acceleration: 1,
     friction: 1,
-    gravity: 4,
+    gravity: 1,
     particles: 400,
     explosion: 10
 })
