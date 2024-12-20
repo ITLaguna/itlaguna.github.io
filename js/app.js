@@ -5,9 +5,7 @@ const   second = 1000,
         fireworkContainer = document.querySelector('.fireworks-container')
         newYear = document.querySelector('#year_text')
 
-// YEAR
-const y = new Date()
-newYear.innerHTML = y.getFullYear()
+
 
 // SET DATE NEW YEAR
 // WAJIB GANTI SETIAP TAHUN
@@ -15,6 +13,10 @@ let new_year = "Jan 1, 2025 00:00:00",
 
 // SET DATE TESTING ONLY
 // let new_year = "Dec 18, 2024 09:44:00"
+
+// YEAR
+constcomingYear = new Date(new_year).getFullYear()
+//newYear.innerHTML = comingYear.getFullYear()
 
 
     countDown = new Date(new_year).getTime(),
