@@ -15,8 +15,9 @@ let new_year = "Jan 1, 2025 00:00:00",
 // let new_year = "Dec 18, 2024 09:44:00"
 
 // YEAR
-constcomingYear = new Date(new_year).getFullYear()
-//newYear.innerHTML = comingYear.getFullYear()
+comingYear = new Date(new_year).getFullYear()
+newYear.innerHTML = comingYear
+// newYear.innerHTML = comingYear.getFullYear()
 
 
     countDown = new Date(new_year).getTime(),
