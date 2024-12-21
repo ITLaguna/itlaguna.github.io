@@ -6,7 +6,7 @@ const   second = 1000,
         newYear = document.querySelector('#year_text');
 
 // Set the target new year date
-let new_year = "Dec 21, 2024 14:30:00",
+let new_year = "Jan 1, 2025 00:00:00",
     comingYear = new Date(new_year).getFullYear();
 newYear.innerHTML = comingYear;
 
