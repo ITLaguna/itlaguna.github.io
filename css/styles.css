@@ -30,15 +30,16 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 10em;
 }
 
 /* "HAPPY NEW YEAR" Text */
 .newYearText {
     letter-spacing: .2rem;
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 7rem;
     z-index: 100;
-    padding-top: 2em;
+    font-weight: 700;
 }
 
 /* "Cheers to new beginnings" Caption */
@@ -48,12 +49,14 @@ body {
     font-size: 2.5rem;
     z-index: 100;
     line-height: 4rem;
+    padding-bottom: 5rem;
 }
 
 /* Year Text */
 .yearText {
     font-size: 15rem;
     z-index: 100;
+    font-weight: 700;
 }
 
 /*TIMER COUNTER*/
@@ -64,21 +67,20 @@ body {
 	width: 200px;
     font-size: 8rem;
     z-index: 100;
-    padding-top: 0.5em;
 }
 
 /* Timer Label Text */
 .timerText {
     display: inline-block;
     font-size: 1.5rem;
-    padding: 1em;
+    padding: 1em 1em 5em;
     text-transform: uppercase;
     z-index: 100;
 }
 
 /* Seconds Only (Large) */
 .timerCount_second span {
-    font-size: 30rem;
+    font-size: 25rem;
     z-index: 100;
 }
 

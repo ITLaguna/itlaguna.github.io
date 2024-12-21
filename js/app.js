@@ -5,6 +5,9 @@ const   second = 1000,
         fireworkContainer = document.querySelector('.fireworks-container'),
         newYear = document.querySelector('#year_text');
 
+// TESTING
+// let new_year = "Dec 21, 2024 20:02:00",
+
 // Set the target new year date
 let new_year = "Jan 1, 2025 00:00:00",
     comingYear = new Date(new_year).getFullYear();
@@ -53,7 +56,6 @@ const interval = setInterval(function () {
 function pad(n) {
     return (n < 10 ? '0' : '') + n;
 }
-
 function new_pad(x) {
     return (x < 10 ? '' : '') + x;
     }
