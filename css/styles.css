@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,37 +7,33 @@
     font-style: normal;
 }
 
-html, body{
+html, body {
     height: 100%;
     margin: 0;
 }
 
-body{
+body {
     align-items: center;
     background-color: #000;
     display: flex;
-
+    justify-content: center; /* Ensure the content is centered */
 }
 
-.container{
+/* Main Container */
+.container {
     color: #F5F7F8;
     background: rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
     text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
-/*TEXT "HAPPY NEW YEAR"*/
-.newYearText{
+/* "HAPPY NEW YEAR" Text */
+.newYearText {
     letter-spacing: .2rem;
     text-transform: uppercase;
     font-size: 5rem;
@@ -45,8 +41,8 @@ body{
     padding-top: 2em;
 }
 
-/*TEXT "Cheer to new beginnings,"*/
-.capNewYearText{
+/* "Cheers to new beginnings" Caption */
+.capNewYearText {
     letter-spacing: .25rem;
     text-transform: uppercase;
     font-size: 2.5rem;
@@ -54,61 +50,55 @@ body{
     line-height: 4rem;
 }
 
-/*TEXT YEARS*/
-.yearText{
+/* Year Text */
+.yearText {
     font-size: 15rem;
     z-index: 100;
 }
 
 /*TIMER COUNTER*/
 .timerCount {
-    width: 200px;
     text-align: center;
     display: block;
+    text-align : center;	
+	width: 200px;
     font-size: 8rem;
     z-index: 100;
-    text-align : center;
     padding-top: 0.5em;
 }
 
-/*TEXT TIMER*/
-.timerText{
+/* Timer Label Text */
+.timerText {
     display: inline-block;
     font-size: 1.5rem;
-    list-style-type:none ;
     padding: 1em;
     text-transform: uppercase;
     z-index: 100;
-    text-align :center;
 }
 
-/*SECOND ONLY*/
-.timerCount_second span{
+/* Seconds Only (Large) */
+.timerCount_second span {
     font-size: 30rem;
     z-index: 100;
-    text-align: center;
-}
-.timerCount_second{
-    width: 750px;
-    text-align: center;
 }
 
-/*FOOTER*/
-footer{
+/* Footer */
+footer {
     width: 100%;
-    color: #F5F7F8; 
+    color: #F5F7F8;
     display: grid;
     place-items: center;
-    padding-bottom: 8em; 
-    padding-top: 2em;
+    padding: 2em 0 8em;
     font-size: 1.2rem;
 }
-.sticky-footer{
+
+/* Sticky Footer */
+.sticky-footer {
     position: sticky;
     top: 100%;
 }
 
-/*FIREWORKS*/
+/* Fireworks Container */
 .fireworks-container {
     position: fixed;
     left: 0;
@@ -118,5 +108,38 @@ footer{
     background-position: bottom left;
     background-size: cover;
     background-repeat: no-repeat;
-	z-index: -1;
+    z-index: -1;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .newYearText {
+        font-size: 3.5rem;
+    }
+
+    .capNewYearText {
+        font-size: 1.8rem;
+    }
+
+    .yearText {
+        font-size: 10rem;
+    }
+
+    .timerCount {
+        font-size: 6rem;
+        width: 150px;
+    }
+
+    .timerText {
+        font-size: 1.2rem;
+        padding: 0.5em;
+    }
+
+    .timerCount_second span {
+        font-size: 20rem;
+    }
+
+    footer {
+        padding: 1em 0 4em;
+    }
 }
