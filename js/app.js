@@ -1,22 +1,17 @@
-const 	second = 1000,
-		minute = second * 60,
-		hour = minute * 60,
-		day = hour * 24,
-		fireworkContainer = document.querySelector('.fireworks-container'),
-		newYear = document.querySelector('#year_text');
+const   second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24,
+        fireworkContainer = document.querySelector('.fireworks-container'),
+        newYear = document.querySelector('#year_text');
 
-// SET DATE FOR NEW YEAR
-// WAJIB GANTI SETIAP TAHUN
-let new_year = "Jan 1, 2025 00:00:00",
-// Uncomment the line below for testing
-// let new_year = "Dec 18, 2024 09:44:00"
-
-// Get Year for Display
-comingYear = new Date(new_year).getFullYear();
+// Set the target new year date
+let new_year = "Dec 21, 2024 14:30:00",
+    comingYear = new Date(new_year).getFullYear();
 newYear.innerHTML = comingYear;
 
-// Set Countdown Target Date
 const countDown = new Date(new_year).getTime();
+
 const interval = setInterval(function () {
     let now = new Date().getTime(),
         distance = countDown - now;
@@ -43,7 +38,6 @@ const interval = setInterval(function () {
         document.getElementById("capTextSpawn").style.display = "none";
     }
 
-    // Show fireworks when countdown ends
     if (distance <= 0) {
         document.getElementById("textSpawn").style.display = "block";
         document.getElementById("countdown").style.display = "none";
@@ -60,10 +54,9 @@ function pad(n) {
     return (n < 10 ? '0' : '') + n;
 }
 
-// Function for padding seconds (if needed, adjust logic)
 function new_pad(x) {
     return (x < 10 ? '' : '') + x;
-}
+    }
 
 // Initialize Fireworks
 const fireworks = new Fireworks(fireworkContainer, {
