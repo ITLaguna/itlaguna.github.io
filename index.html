@@ -14,8 +14,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="newYearText" id="textSpawn" style="display: none;">HAPPY NEW YEAR</h1>
-        <h2 class="capNewYearText" id="capTextSpawn" style="display: block;">
+        <h1 class="newYearText" id="textSpawn">HAPPY NEW YEAR</h1>
+        <h2 class="capNewYearText" id="capTextSpawn">
             Cheers to new beginnings, joyous moments, <br> and unforgettable memories in the coming year! <br>
         </h2>
 
@@ -35,14 +35,14 @@
                 </div>
             </div>
 
-            <div id="half" style="display: none;">
+            <div id="half">
                 <div class="timerCount_second">
                     <span id="digitSeconds_2"></span>
                 </div>
             </div>
         </div>
 
-        <div id="year_text" class="yearText" style="display: none;">
+        <div id="year_text" class="yearText">
             <span id="yearDisplay">0000</span>
         </div>
 
@@ -52,7 +52,9 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
-    <div class="fireworks-container" style="background-image: url('./assets/bg.jpg');"></div>
+    <div class="fireworks-container">
+        <div class="overlay"></div>
+    </div>
     <script src="js/fireworks.js"></script>
     <script src="js/app.js"></script>
 </body>

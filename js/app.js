@@ -9,7 +9,7 @@ const   second = 1000,
         newYear = document.querySelector('#year_text');
 
 // Set the target for TESTING 
-// let new_year = "Dec 22, 2024 16:45:00",
+// let new_year = "Dec 22, 2024 21:55:00",
 
 // Set the target new year date (DON'T CHANGE)
 let new_year = "Jan 1, 2025 00:00:00",

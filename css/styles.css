@@ -25,7 +25,6 @@ body {
 /* Main Container */
 .container {
     color: #F5F7F8;
-    background: rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 100%;
     height: 100%;
@@ -58,6 +57,7 @@ body {
 .yearText {
     font-size: 15rem;
     z-index: 100;
+    display: none;
 }
 
 /*Countdown Timer*/
@@ -103,16 +103,33 @@ footer {
 
 /* Fireworks Container */
 .fireworks-container {
+    background-image: url('../assets/bg.jpg');
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-position: bottom left;
+    background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
 }
+
+/* Overlay background */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show the content after the countdown is complete  */
+#textSpawn, #half {
+    display: none;
+}
+
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
