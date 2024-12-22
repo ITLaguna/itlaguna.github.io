@@ -1,3 +1,6 @@
+// #######################
+// Author: Herry Saptiawan
+
 const   second = 1000,
         minute = second * 60,
         hour = minute * 60,
@@ -5,11 +8,13 @@ const   second = 1000,
         fireworkContainer = document.querySelector('.fireworks-container'),
         newYear = document.querySelector('#year_text');
 
-// TESTING
-// let new_year = "Dec 21, 2024 20:02:00",
+// Set the target for TESTING 
+// let new_year = "Dec 22, 2024 16:45:00",
 
-// Set the target new year date
+// Set the target new year date (DON'T CHANGE)
 let new_year = "Jan 1, 2025 00:00:00",
+
+// Display the year in the new year (AUTOMATICALLY FOLLOW TARGET NEW YEAR DATE)
     comingYear = new Date(new_year).getFullYear();
 newYear.innerHTML = comingYear;
 

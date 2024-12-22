@@ -1,9 +1,12 @@
+/* ####################### */
+/* Author: Herry Saptiawan */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -39,7 +42,6 @@ body {
     text-transform: uppercase;
     font-size: 7rem;
     z-index: 100;
-    font-weight: 700;
 }
 
 /* "Cheers to new beginnings" Caption */
@@ -52,33 +54,32 @@ body {
     padding-bottom: 5rem;
 }
 
-/* Year Text */
+/* The year in the New Year */
 .yearText {
     font-size: 15rem;
     z-index: 100;
-    font-weight: 700;
 }
 
-/*TIMER COUNTER*/
+/*Countdown Timer*/
 .timerCount {
-    text-align: center;
     display: block;
     text-align : center;	
-	width: 200px;
+	width: 250px;
     font-size: 8rem;
     z-index: 100;
 }
 
-/* Timer Label Text */
+/* Countdown Timer Label Text */
 .timerText {
     display: inline-block;
     font-size: 1.5rem;
     padding: 1em 1em 5em;
     text-transform: uppercase;
     z-index: 100;
+	letter-spacing: .15rem;
 }
 
-/* Seconds Only (Large) */
+/* Countdown Timer Seconds Only (Large) */
 .timerCount_second span {
     font-size: 25rem;
     z-index: 100;
