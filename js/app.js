@@ -1,76 +1,156 @@
 // #######################
 // Author: Herry Saptiawan
+// #######################
 
-const   second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24,
-        fireworkContainer = document.querySelector('.fireworks-container'),
-        newYear = document.querySelector('#year_text');
 
-// Set the target for TESTING 
-// let new_year = "Dec 22, 2024 21:55:00",
+// =====================================
+// KONSTANTA WAKTU (dalam milidetik)
+// =====================================
+const second = 1000,        // 1 detik = 1000 ms
+      minute = second * 60, // 1 menit = 60 detik
+      hour   = minute * 60, // 1 jam = 60 menit
+      day    = hour * 24;   // 1 hari = 24 jam
 
-// Set the target new year date (DON'T CHANGE)
-let new_year = "Jan 1, 2025 00:00:00",
 
-// Display the year in the new year (AUTOMATICALLY FOLLOW TARGET NEW YEAR DATE)
-    comingYear = new Date(new_year).getFullYear();
-newYear.innerHTML = comingYear;
+// =====================================
+// AMBIL ELEMEN DOM YANG DIBUTUHKAN
+// =====================================
+const fireworkContainer = document.querySelector('.fireworks-container'), // Container kembang api
+      newYear = document.querySelector('#new-year-year');                  // Elemen teks tahun baru
 
-const countDown = new Date(new_year).getTime();
 
+// =====================================
+// SET TANGGAL TARGET TAHUN BARU
+// =====================================
+
+// Mode TESTING
+// let new_year = "December 26, 2025 14:44:40"; // Tanggal target New Year
+
+// Mode PRODUKSI
+let new_year = "January 01, 2026 00:00:00"; // Tanggal resmi tahun baru
+
+
+// =====================================
+// MENENTUKAN TAHUN BARU SECARA OTOMATIS
+// =====================================
+const comingYear = new Date(new_year).getFullYear(); // Ambil tahun dari tanggal target
+newYear.innerHTML = comingYear;                      // Tampilkan tahun baru ke halaman
+
+
+// =====================================
+// HITUNG WAKTU COUNTDOWN
+// =====================================
+const countDown = new Date(new_year).getTime(); // Konversi tanggal target ke timestamp
+
+
+// =====================================
+// INTERVAL COUNTDOWN (UPDATE SETIAP DETIK)
+// =====================================
 const interval = setInterval(function () {
+
+    // Waktu sekarang & selisih waktu menuju tahun baru
     let now = new Date().getTime(),
         distance = countDown - now;
 
-    // Update Countdown Display
-    document.getElementById("digitDays").innerText = pad(Math.floor(distance / day));
-    document.getElementById("digitHours").innerText = pad(Math.floor((distance % day) / hour));
-    document.getElementById("digitMinutes").innerText = pad(Math.floor((distance % hour) / minute));
-    document.getElementById("digitSeconds").innerText = pad(Math.floor((distance % minute) / second));
-    document.getElementById("digitSeconds_2").innerText = new_pad(Math.floor((distance % minute) / second));
+    // ---------------------------------
+    // HITUNG SISA WAKTU
+    // ---------------------------------
+    let days    = Math.floor(distance / day);
+    let hours   = Math.floor((distance % day) / hour);
+    let minutes = Math.floor((distance % hour) / minute);
+    let seconds = Math.floor((distance % minute) / second);
 
-    // Hide elements when time reaches a certain point
+    // ---------------------------------
+    // UPDATE TAMPILAN COUNTDOWN
+    // ---------------------------------
+    document.getElementById('days-num').innerText    = days < 10 ? '0' + days : days;
+    document.getElementById('hours-num').innerText   = hours < 10 ? '0' + hours : hours;
+    document.getElementById('minutes-num').innerText = minutes < 10 ? '0' + minutes : minutes;
+    document.getElementById('seconds-num').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+    // ---------------------------------
+    // SEMBUNYIKAN HARI JIKA < 1 HARI
+    // ---------------------------------
     if (distance <= day) {
         document.getElementById('days').style.display = "none";
     }
 
+    // ---------------------------------
+    // SEMBUNYIKAN JAM JIKA < 1 JAM
+    // ---------------------------------
     if (distance <= hour) {
         document.getElementById('hours').style.display = "none";
     }
 
+    // ---------------------------------
+    // SEMBUNYIKAN MENIT JIKA < 1 MENIT
+    // ---------------------------------
     if (distance <= minute) {
-        document.getElementById("full").style.display = "none";
-        document.getElementById("half").style.display = "block";
-        document.getElementById("capTextSpawn").style.display = "none";
+        document.getElementById('minutes').style.display = "none";
+        document.getElementById('seconds').classList.remove('scale');
+        document.getElementById('seconds-num').style.fontSize = '35rem';
+
+        // Sembunyikan label teks (DAYS, HOURS, dll)
+        document.querySelectorAll('.time p').forEach(p => p.style.display = 'none');
     }
 
+    // ---------------------------------
+    // ANIMASI DETIK 10 DETIK TERAKHIR
+    // ---------------------------------
+    if (distance <= second * 10 && distance > 0) {
+        document.getElementById('seconds-num').innerText = seconds;
+        document.getElementById('seconds').classList.add('scale');
+    }
+
+//     if (distance === 0) {
+//     document.getElementById('seconds').classList.remove('scale');
+// }
+
+    // ---------------------------------
+    // SAAT COUNTDOWN SELESAI
+    // ---------------------------------
     if (distance <= 0) {
-        document.getElementById("textSpawn").style.display = "block";
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("year_text").style.display = "block";
-        document.getElementById("half").style.display = "none";
-        fireworks.start();
-        clearInterval(interval);
+        document.getElementById('seconds').classList.remove('scale');
+        document.getElementById('seconds').style.opacity = '0';
+        document.getElementById('happy-new-year').classList.add('fadeIn');
+        document.getElementById("countdown-container").style.display = "none";
+        document.getElementById("happy-new-year").style.display = "block";
+
+        fireworks.start();      // Jalankan animasi kembang api
+        clearInterval(interval); // Hentikan countdown
     }
 
-}, 0);
+}, 1000); // Update setiap 1 detik
 
-// Function to pad the number
-function pad(n) {
-    return (n < 10 ? '0' : '') + n;
-}
-function new_pad(x) {
-    return (x < 10 ? '' : '') + x;
-    }
 
-// Initialize Fireworks
+// =====================================
+// INISIALISASI ANIMASI KEMBANG API
+// =====================================
 const fireworks = new Fireworks(fireworkContainer, {
-    speed: 15,
-    acceleration: 1,
-    friction: 1,
-    gravity: 1,
-    particles: 400,
-    explosion: 10
+
+  // ⏱️ Jeda antar roket
+  delay: {
+    min: 1,   // Jeda minimum (lebih sering)
+    max: 5    // Jeda maksimum (lebih halus)
+  },
+
+  // 🚀 Gerakan roket
+  speed: 8,         // Kecepatan awal roket
+  acceleration: 1,  // Percepatan roket ke atas
+
+  // 💥 Efek ledakan
+  particles: 140,   // Jumlah partikel ledakan
+  explosion: 8,     // Radius sebaran partikel
+  trace: 4,         // Panjang jejak roket
+
+  // 🎈 Gerakan partikel
+  friction: 0.96,   // Gesekan partikel
+  gravity: 1.5,     // Gravitasi partikel
+
+  // ✨ Efek visual
+  opacity: 0.5,     // Efek glow / transparansi
+  hue: {
+    min: 0,
+    max: 360        // Warna acak (pelangi)
+  }
 });
