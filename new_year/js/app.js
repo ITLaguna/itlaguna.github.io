@@ -35,7 +35,7 @@ const fireworkContainer  = document.querySelector(".fireworks-container");
 // TARGET WAKTU
 // =====================================
 // const new_year   = "December 31, 2025 00:25:00";
-const new_year   = "January 01, 2026 00:00:00";
+const new_year   = "January 01, 2027 00:00:00";
 
 const countDown  = new Date(new_year).getTime();
 const comingYear = new Date(new_year).getFullYear();
